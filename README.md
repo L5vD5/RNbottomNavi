@@ -9,4 +9,4 @@ reference:
 
 # Jenkins
 
--http://l5vd5.asuscomm.com:8081
+- http://l5vd5.asuscomm.com:8081
