@@ -32,8 +32,23 @@ export default class Signup extends Component {
             samePass = true
         else
             Alert.alert("비밀번호가 일치하지 않습니다.")
-        if(inputed && samePass)
-            this.props.onExitPress()
+        if(inputed && samePass) {
+					fetch('http://l5vd5.asuscomm.com:3100/auth/local/register', {
+						method: 'POST',
+						headers: {
+							Accept: 'application/json',
+							'Content-Type': 'application/json',
+						},
+						body: JSON.stringify({
+							"email": this.state.id,
+							"pw": this.state.password,
+						}),
+					})
+            .then((response) => {
+              this.props.onExitPress()
+            })
+            
+        }
 
     }
 
