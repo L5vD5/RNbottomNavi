@@ -24,8 +24,25 @@ export default class Login extends Component {
             inputed=true
         else
             Alert.alert("아이디/비밀번호를 입력해주십시오")
-        if(inputed)
-            this.props.onLoginPress()
+        if(inputed) {
+					fetch('http://l5vd5.asuscomm.com:3100/auth/local/', {
+						method: 'POST',
+						headers: {
+							Accept: 'application/json',
+							'Content-Type': 'application/json',
+						},
+						body: JSON.stringify({
+							"email": this.state.id,
+							"password": this.state.password,
+						}),
+					})
+            .then((response) => {
+              if(response.status==200)
+                this.props.onLoginPress()
+              else if(response.status==401)
+                Alert.alert("아이디/비밀번호를 확인하세요")
+            })
+        }
     }
 
     render() {

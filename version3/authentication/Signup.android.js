@@ -41,13 +41,12 @@ export default class Signup extends Component {
 						},
 						body: JSON.stringify({
 							"email": this.state.id,
-							"pw": this.state.password,
+							"password": this.state.password,
 						}),
 					})
             .then((response) => {
               this.props.onExitPress()
             })
-            
         }
 
     }
