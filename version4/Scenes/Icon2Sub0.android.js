@@ -12,7 +12,7 @@ export default class Icon2Sub1 extends Component {
     return(
       <View>
         <Text>예약하시겠습니까</Text>
-        <Button title="next" onPress={this.props.onNextPress}/>
+        <Button title="next" onPress={()=>this.props.navigation.navigate("Phase1")}/>
       </View>
     )
   }

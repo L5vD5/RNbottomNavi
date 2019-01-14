@@ -10,12 +10,12 @@ import {
 export default class Icon2Sub3 extends Component {
   constructor(props) {
     super(props);
-    this._onDone=this._onDone.bind(this)
+    this._onDone=this._onDone.bind(this);
   }
 
   _onDone(){
-    Alert.alert("예약이 완료되었습니다.")
-    this.props.onNextPress()
+    Alert.alert("예약이 완료되었습니다.");
+    this.props.navigation.popToTop();
   }
   render()
   {
@@ -25,7 +25,7 @@ export default class Icon2Sub3 extends Component {
 
         <Button title="Done" onPress={this._onDone}/>
         <View style={{margin:7}} />
-        <Button title="previous" onPress={this.props.onPreviousPress}/>
+        <Button title="취소" onPress={()=>this.props.navigation.popToTop()}/>
       </View>
     )
   }

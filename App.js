@@ -7,6 +7,6 @@
  */
 
 
-import FirstScreen3 from "./version3/FirstScreen3";
-export default FirstScreen3;
+import StartNavi from "./version4/StartNavi";
+export default StartNavi;
 
